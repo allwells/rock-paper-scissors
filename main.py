@@ -1,11 +1,11 @@
-# # # # # # # # # # # # # # # # # # # #
-#                                     #
-#   Rock, Paper Scissors Game - Zuri  #
-#                                     #
-#   @author Allwell Onen              #
-#   Wednesday, 1st June 2022          #
-#                                     #
-# # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # #
+#                                             #
+#   Rock Paper Scissors Game - Zuri Training  #
+#                                             #
+#   @author Allwell Onen                      #
+#   Wednesday, 1st June 2022                  #
+#                                             #
+# # # # # # # # # # # # # # # # # # # # # # # #
 
 from time import sleep
 import random
@@ -39,27 +39,27 @@ __   (___)
 """
 
 draw = """
-# # # # # # # # #
-#               #
-#  ITS A DRAW!  #
-#               #
-# # # # # # # # #
+# # # # # # # # # # # # # #
+#                         #
+#       ITS A DRAW!       #
+#                         #
+# # # # # # # # # # # # # #
 """
 
 win = """
-# # # # # # # # #
-#               #
-#   YOU  WIN!   #
-#               #
-# # # # # # # # #
+# # # # # # # # # # # # # #
+#                         #
+#        YOU  WIN!        #
+#                         #
+# # # # # # # # # # # # # #
 """
 
 loose = """
-# # # # # # # # #
-#               #
-#   YOU LOOSE!  #
-#               #
-# # # # # # # # #
+# # # # # # # # # # # # # #
+#                         #
+#        YOU LOOSE!       #
+#                         #
+# # # # # # # # # # # # # #
 """
 
 
@@ -113,7 +113,7 @@ while(game_started):
 
     if (getOption(user) == getOption(bot)):
         print(draw)
-        print("Pick again!")
+        print('Pick again!')
         continue
 
     elif user_wins:
@@ -125,9 +125,5 @@ while(game_started):
         game_started = False
 
     else:
-        print(f'Invalid option!')
+        print('Invalid option!')
         continue
-
-
-# Issue: List inde  out of range.
-# when user choice greater or less than number of options
