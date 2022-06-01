@@ -67,7 +67,7 @@ options = ['r', 'p', 's'] # options for only the bot
 bot = random.choice(options)
 player1 = 'CPU'
 game_started = True
-game_data = {'r': {'option': 'Rock', 'number': 0, 'image': rock}, 'p': {'option': 'Paper', 'number': 1, 'image': paper}, 's': {'option': 'Scissors', 'number': 2, 'image': scissors}}
+game_data = {'r': {'option': 'Rock', 'image': rock}, 'p': {'option': 'Paper', 'image': paper}, 's': {'option': 'Scissors', 'image': scissors}}
 
 def getOption(player_option):
     return game_data[player_option]['option']
