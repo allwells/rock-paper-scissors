@@ -72,9 +72,6 @@ game_data = {'r': {'option': 'Rock', 'number': 0, 'image': rock}, 'p': {'option'
 def getOption(player_option):
     return game_data[player_option]['option']
 
-def getNumber(player_option):
-    return game_data[player_option]['number']
-
 def getImage(player_option):
     return game_data[player_option]['image']
 
