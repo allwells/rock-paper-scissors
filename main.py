@@ -63,8 +63,7 @@ loose = """
 """
 
 
-options = ['r', 'p', 's'] # options for only the bot
-bot = random.choice(options)
+options = ['r', 'p', 's'] # options for only the cpu
 player1 = 'CPU'
 game_started = True
 game_data = {'r': {'option': 'Rock', 'image': rock}, 'p': {'option': 'Paper', 'image': paper}, 's': {'option': 'Scissors', 'image': scissors}}
@@ -88,27 +87,31 @@ while(game_started):
     print('"S" for Scissors\n')
 
     # get user input and convert it to lowercase character
+    cpu = random.choice(options)
     user = input('Choose: ')
     user = user.lower()
+    info = f'   {player2} ({getOption(user)}) : CPU ({getOption(cpu)})   '
 
     if user != 'r' and user != 'p' and user != 's':
-        print('Invalid option\nTry again.!')
+        print('Invalid option! Try again.')
         continue
 
-    sleep(0.9)
-    print(f'\nYou: {getOption(user)} {getImage(user)}')
+    sleep(1)
+    print(f"Your move:{getImage(user)} \n CPU's move:{getImage(cpu)}")
 
-    sleep(1.5)
-    print(f'\nCPU: {getOption(bot)} {getImage(bot)}')
-    sleep(0.3)
+    print('#' * len(info))
+    print(f'{info}')
+    print('#' * len(info))
+
+    sleep(1)
 
     # game logic/condition for user to win
-    user_wins = ((user == 'r') and (bot == 's')) or ((user == 'p') and (bot == 'r')) or ((user == 's') and (bot == 'p'))
+    user_wins = ((user == 'r') and (cpu == 's')) or ((user == 'p') and (cpu == 'r')) or ((user == 's') and (cpu == 'p'))
 
-    # game login/condition for bot to win
-    bot_wins = ((bot == 'r') and (user == 's')) or ((bot == 'p') and (user == 'r')) or ((bot == 's') and (user == 'p'))
+    # game login/condition for cpu to win
+    cpu_wins = ((cpu == 'r') and (user == 's')) or ((cpu == 'p') and (user == 'r')) or ((cpu == 's') and (user == 'p'))
 
-    if (getOption(user) == getOption(bot)):
+    if (getOption(user) == getOption(cpu)):
         print(draw)
         print('Pick again!')
         continue
@@ -117,10 +120,10 @@ while(game_started):
         print(win)
         game_started = False
 
-    elif bot_wins:
+    elif cpu_wins:
         print(loose)
         game_started = False
 
     else:
-        print('Invalid option!')
+        print('Invalid option! Try again.')
         continue
